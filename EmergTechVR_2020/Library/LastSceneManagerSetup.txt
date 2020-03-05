@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/AlphaScene.unity
-=======
-- path: Assets/Scenes/DarenScene.unity
->>>>>>> 6f1e133a5068fc4ad4bd7b9cf92aeaf20034db80
   isLoaded: 1
   isActive: 1
   isSubScene: 0
