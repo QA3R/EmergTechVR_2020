@@ -6,6 +6,7 @@ public class SwordScript : MonoBehaviour
 {
     public GameObject enemyScriptObj;
     public EnemyScript enemyScript;
+    public bool inCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,24 @@ public class SwordScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Enemy_Sword" && enemyScript.isImmortal)
+        if (collision.gameObject.name == "Enemy_Sword" && enemyScript.isImmortal && !inCollision)
         {
             Debug.Log("Sword has collided");
             enemyScript.DecreaseParryCounter();
+            inCollision = true;
         }
         else
         {
             Debug.Log("Attack was blocked");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.name == "Enemy_Sword" && enemyScript.isImmortal && inCollision)
+        {
+            inCollision = false;
+            Debug.Log(inCollision.ToString());
         }
     }
 }

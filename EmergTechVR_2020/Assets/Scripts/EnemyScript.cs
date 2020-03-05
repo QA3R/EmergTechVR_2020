@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class EnemyScript : MonoBehaviour
     public int health;
 
     public bool isImmortal;
+    public bool inCollision;
 
-    public TextMesh healthCounter;
-    public TextMesh parryCounter;
-    public TextMesh enemyState;
+    public Text healthCounter;
+    public Text parryCounter;
+    public Text enemyState;
   
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class EnemyScript : MonoBehaviour
             hitWindow = 7;
             Debug.Log("THE ENEMY IS EXPOSED");
             enemyState.text = "STATE: EXPOSED";
+            parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
         }
         else if (!isImmortal && hitWindow <=0) 
         {
@@ -56,6 +59,7 @@ public class EnemyScript : MonoBehaviour
             parryCount = 7;
             Debug.Log("THE ENEMY ENTERED ITS DEFENSE STATE");
             enemyState.text = "STATE: DEFENDING";
+            parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
         }
 
         if (health <= 0)
@@ -66,17 +70,26 @@ public class EnemyScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Weapon" && !isImmortal)
+        if (collision.gameObject.tag == "Weapon" && !isImmortal && !inCollision)
         {
             hitWindow--;
             health--;
             ChangeState();
             Debug.Log("The enemy has " + health + " health left.");
             healthCounter.text = "HEALTH: " + health.ToString();
+            inCollision = true;
         }
         else if (collision.gameObject.tag == "Weapon" && isImmortal)
         {
             Debug.Log("THE ENEMY IS IN DEFENSE STATE");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Weapon" && !isImmortal && inCollision)
+        {
+            inCollision = false;
         }
     }
 }
