@@ -605,7 +605,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
+<<<<<<< HEAD
   m_Text: AMANDA is HERE
+=======
+  m_Text: AMANDA is still HERE
+>>>>>>> 22d72c50dee7fe67bc6e3d2033ab5c98e5f468b4
 --- !u!222 &1759338537
 CanvasRenderer:
   m_ObjectHideFlags: 0

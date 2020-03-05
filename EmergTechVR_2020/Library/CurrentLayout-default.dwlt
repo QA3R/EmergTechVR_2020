@@ -621,7 +621,11 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: D:\GitProjects\EmergTechVR_2020\EmergTechVR_2020
+=======
+  m_LastProjectPath: C:\Users\Lyssa\Desktop\repos\EmergTechVR_2020\EmergTechVR_2020
+>>>>>>> 22d72c50dee7fe67bc6e3d2033ab5c98e5f468b4
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
