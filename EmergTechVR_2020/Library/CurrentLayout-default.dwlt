@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 43.2
+    x: 8
+    y: 51
     width: 1536
-    height: 780.8
+    height: 781
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
@@ -353,8 +353,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 73.6
+    x: 8
+    y: 81
     width: 202
     height: 712
   m_ViewDataDictionary: {fileID: 0}
@@ -408,8 +408,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 202.40001
-    y: 73.6
+    x: 210
+    y: 81
     width: 1055
     height: 358
   m_ViewDataDictionary: {fileID: 0}
@@ -597,8 +597,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 202.40001
-    y: 450.4
+    x: 210
+    y: 458
     width: 1055
     height: 335
   m_ViewDataDictionary: {fileID: 0}
@@ -621,7 +621,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: D:\Documents\GITHUB projects\Game Development Program - 2018-2021\EmergTechVR_2020\EmergTechVR_2020
+=======
+<<<<<<< HEAD
+  m_LastProjectPath: D:\GitProjects\EmergTechVR_2020\EmergTechVR_2020
+=======
+  m_LastProjectPath: C:\Users\Lyssa\Desktop\repos\EmergTechVR_2020\EmergTechVR_2020
+>>>>>>> 22d72c50dee7fe67bc6e3d2033ab5c98e5f468b4
+>>>>>>> ee08633e70cedac48a3758fc89c0fa50f04e683b
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -906,8 +914,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1259.2001
-    y: 73.6
+    x: 1267
+    y: 81
     width: 275
     height: 712
   m_ViewDataDictionary: {fileID: 0}
