@@ -337,20 +337,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Imported Assets/Fantasy Forest Pack/Fantasy Forest Environment Free Sample
+    - Assets/Imported Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Imported Assets/Fantasy Forest Pack/Fantasy Forest Environment Free Sample
+  - Assets/Imported Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Lyssa\Desktop\repos\EmergTechVR_2020\EmergTechVR_2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 450}
-    m_SelectedIDs: 22400000
-    m_LastClickedID: 16418
-    m_ExpandedIDs: 00000000263100000a3300009a330000e2380000ae3a00001c3c00009e3c00009a3e0000b83e000022400000304300000e4e00004e52000058540000965b0000a65b0000aa5b0000be5b0000225c0000725c00003a5d000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 265c0000
+    m_LastClickedID: 23590
+    m_ExpandedIDs: 0000000026310000e43800001e3c00009c3e0000104e0000b6530000985b0000a85b0000c05b0000265c0000765c00003e5d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026310000e23800009a3e0000a65b0000725c00003a5d0000
+    m_ExpandedIDs: 0000000026310000e43800009c3e0000a85b0000765c00003e5d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,9 +499,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 26f1ffff78fbffff265f0000
+      m_SelectedIDs: fc5e0000
+      m_LastClickedID: 24316
+      m_ExpandedIDs: f0f7ffff78fbffffe05e00000a5f00002e5f00003a5f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -517,7 +517,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.5073144, y: -4.4428144, z: 5.7976437}
+    m_Target: {x: 11.460764, y: -20.401754, z: -9.840276}
     speed: 2
-    m_Value: {x: -2.5073144, y: -4.4428144, z: 5.7976437}
+    m_Value: {x: 11.460764, y: -20.401754, z: -9.840276}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -592,13 +592,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.06708059, y: 0.6910341, z: -0.06466671, w: -0.71680236}
+    m_Target: {x: -0.17047796, y: 0.7040321, z: -0.18037798, w: -0.665405}
     speed: 2
-    m_Value: {x: -0.067177, y: 0.68995285, z: -0.064565524, w: -0.7178326}
+    m_Value: {x: -0.16947764, y: 0.70429343, z: -0.17931955, w: -0.665652}
   m_Size:
-    m_Target: 129.053
+    m_Target: 101.81944
     speed: 2
-    m_Value: 123.49568
+    m_Value: 97.434875
   m_Ortho:
     m_Target: 0
     speed: 2
