@@ -18,11 +18,11 @@ public class PlinthPuzzle : MonoBehaviour
     //get the info of the item on the plinth
     private void OnCollisionEnter(Collision collision)
     {
-        StartCoroutine("CheckAnswer");
+        StartCoroutine(CheckAnswer(collision));
     }
 
     //checks if answer is the correct item
-    IEnumerator CheckAnswer(Collider collision)
+    IEnumerator CheckAnswer(Collision collision)
     {
         if (collision.gameObject.CompareTag(correctItemName))
         {
