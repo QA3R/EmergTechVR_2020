@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/DarenScene.unity
+=======
 - path: Assets/Scenes/AlphaScene.unity
+>>>>>>> parent of 7bd327c... Revert "HUD finally implemented"
   isLoaded: 1
   isActive: 1
   isSubScene: 0
