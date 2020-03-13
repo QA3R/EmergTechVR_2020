@@ -6,9 +6,13 @@ using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
+    public Animator enemyAnimator;
+
     public int parryCount;
     public int hitWindow;
     public int health;
+    public int exposedTimer;
+
 
     public bool isImmortal;
     public bool inCollision;
@@ -23,10 +27,12 @@ public class EnemyScript : MonoBehaviour
         isImmortal = true;
         parryCount = 7;
         hitWindow = 7;
-        health = 10;
+        health = 100;
         parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
         healthCounter.text = "HEALTH: " + health.ToString();
         enemyState.text = "STATE: DEFENDING";
+        enemyAnimator = this.gameObject.GetComponent<Animator>();
+        enemyAnimator.SetInteger("AtkSetCount", parryCount);
     }
 
     // Update is called once per frame
@@ -35,39 +41,56 @@ public class EnemyScript : MonoBehaviour
         
     }
 
+    // Enumerator for exposed state of enemy
+    public IEnumerator BecomeExposed()
+    {
+        // Makes enemy mortal for 4 seconds before entering back into its attacking state
+        isImmortal = false;
+        hitWindow = 7;
+        Debug.Log("THE ENEMY IS EXPOSED");
+        enemyState.text = "STATE: EXPOSED";
+        parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
+
+        yield return new WaitForSeconds(exposedTimer);
+
+        isImmortal = true;
+        parryCount = 7;
+        Debug.Log("THE ENEMY ENTERED ITS ATTACK STATE");
+        enemyState.text = "STATE: ATTACKING";
+        parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
+        enemyAnimator.SetTrigger("EnemyRecovered");
+        enemyAnimator.SetInteger("AtkSetCount", parryCount);
+
+    }
+
+    // Decreases the parry counter to be called on collision
     public void DecreaseParryCounter()
     {
         parryCount --;
         ChangeState();
         parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
         Debug.Log("The enemy can block " + parryCount + " more times.");
+        enemyAnimator.SetTrigger("AtkParried");
+        enemyAnimator.SetInteger("AtkSetCount", parryCount);
     }
 
+    // Method to change enemy state (calls enumerator and changes bools)
     public void ChangeState()
     {
+        // Checks if enemy is entering the exposed state
         if (isImmortal && parryCount <= 0)
         {
-            isImmortal = false;
-            hitWindow = 7;
-            Debug.Log("THE ENEMY IS EXPOSED");
-            enemyState.text = "STATE: EXPOSED";
-            parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
+            StartCoroutine("BecomeExposed");
         }
-        else if (!isImmortal && hitWindow <=0) 
-        {
-            isImmortal = true;
-            parryCount = 7;
-            Debug.Log("THE ENEMY ENTERED ITS DEFENSE STATE");
-            enemyState.text = "STATE: DEFENDING";
-            parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
-        }
-
+   
+        // Checks if the enemy is dead
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
 
+    // Checks enemy state to see if we can damage the enemy
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Weapon" && !isImmortal && !inCollision)
@@ -85,6 +108,7 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    // Checks if the player sword is simply held inside enemy
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Weapon" && !isImmortal && inCollision)
