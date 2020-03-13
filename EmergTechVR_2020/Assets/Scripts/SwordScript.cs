@@ -23,7 +23,7 @@ public class SwordScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Enemy_Sword" && enemyScript.isImmortal && !inCollision)
+        if (collision.gameObject.name == "Enemy_Sword" && enemyScript.isImmortal && !inCollision && enemyScript.canParry)
         {
             Debug.Log("Sword has collided");
             enemyScript.DecreaseParryCounter();

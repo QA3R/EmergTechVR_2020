@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
 
     public bool isImmortal;
     public bool inCollision;
+    public bool canParry;
 
     public Text healthCounter;
     public Text parryCounter;
@@ -24,6 +25,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canParry = false;
         isImmortal = true;
         parryCount = 7;
         hitWindow = 7;
@@ -62,10 +64,23 @@ public class EnemyScript : MonoBehaviour
         enemyAnimator.SetInteger("AtkSetCount", parryCount);
 
     }
+    
+    public void ToggleParryInvulnerabiltiy()
+    {
+        if (canParry)
+        {
+            canParry = false;
+        }
+        else
+        {
+            canParry = true;
+        }
+    }
 
     // Decreases the parry counter to be called on collision
     public void DecreaseParryCounter()
     {
+        ToggleParryInvulnerabiltiy();
         parryCount --;
         ChangeState();
         parryCounter.text = "PARRY COUNT: " + parryCount.ToString();
