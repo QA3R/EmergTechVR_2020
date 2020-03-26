@@ -46,7 +46,7 @@ public class EnemyScript : MonoBehaviour
     // Enumerator for exposed state of enemy
     public IEnumerator BecomeExposed()
     {
-        // Makes enemy mortal for 4 seconds before entering back into its attacking state
+        // Makes enemy mortal for set timer (exposed state)
         isImmortal = false;
         hitWindow = 7;
         Debug.Log("THE ENEMY IS EXPOSED");
@@ -55,6 +55,7 @@ public class EnemyScript : MonoBehaviour
 
         yield return new WaitForSeconds(exposedTimer);
 
+        // Sets the enemy back into its attacking state
         isImmortal = true;
         parryCount = 7;
         Debug.Log("THE ENEMY ENTERED ITS ATTACK STATE");
